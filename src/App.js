@@ -1,25 +1,21 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import Login from './components/Login';
+import Register from './components/Register';
+import Lists from './components/Lists';
+import './styles.css'; // Import the CSS file
 
-function App() {
+const App = () => {
+  const userId = 1; // Replace with actual user ID after login
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Login />
+      <Register />
+      {userId && <Lists userId={userId} />}
     </div>
   );
-}
+};
 
 export default App;
